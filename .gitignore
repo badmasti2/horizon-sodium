@@ -1,0 +1,13 @@
+/target/
+/work/
+/dist/
+*.log
+*.hnmod
+*.exe
+*.dll
+*.jar
+__pycache__/
+.DS_Store
+Thumbs.db
+.env
+/.local/
