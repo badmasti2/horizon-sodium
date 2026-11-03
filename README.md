@@ -6,7 +6,7 @@
 
 Sodium-style video settings and non-lighting optimizations for the Rust Minecraft client.
 
-`Minecraft 26.3` · `Horizon c9d474d` · `Native .hnmod` · `v0.3.1`
+`Minecraft 26.3` · `Horizon c9d474d` · `Native .hnmod` · `v0.4.0`
 
 [Install](#install) · [Features](#features) · [Development](#development) · [Compatibility](#compatibility)
 
@@ -14,7 +14,7 @@ Sodium-style video settings and non-lighting optimizations for the Rust Minecraf
 
 ## Install
 
-1. Download `sodium_horizon-0.3.1.hnmod` from **Releases** once a release is published.
+1. Download `sodium_horizon-0.4.0.hnmod` from [Releases](https://github.com/badmasti2/horizon-sodium/releases/latest).
 2. Put it in Horizon's native mods folder. Default Windows location:
 
    ```text
@@ -25,6 +25,10 @@ Sodium-style video settings and non-lighting optimizations for the Rust Minecraf
 4. Start Horizon and open Video Settings.
 
 This is a Horizon native source mod. Fabric `.jar` files do not run in Horizon.
+
+## New in 0.4.0
+
+Each tab now displays only its own settings, with its own scroll range, search and keyboard focus. The extra gap below mod headings is removed. Install the separate [Continuity companion](https://github.com/badmasti2/continuity-horizon/releases/latest) to add its connected/emissive texture controls to the same Video Settings menu. Both mod packages must be installed for that integration.
 
 ## Features
 
@@ -45,7 +49,7 @@ Restart Horizon after changing Graphics API. Multiplayer servers control their o
 | --- | --- |
 | Minecraft data | 26.3 |
 | Horizon source | `c9d474dd9116e84c243f8992d75c11314df56f06` |
-| Mod | 0.3.1 |
+| Mod | 0.4.0 |
 | Mixins tooling | Metadata pins `4342a0b`; also compile-checked with launcher's `ddd9700` |
 
 Native hooks depend on Horizon's source layout. Other nightlies may need an update.
@@ -63,13 +67,13 @@ python tools/package.py
 
 The source bundle is written to `dist/`. Packaging does not need a full Horizon checkout. Standalone tests do not compile the game.
 
-For a full native build, obtain the pinned Horizon source and compatible `horizon-mixins`, then run PowerShell:
+For a full native build, install the native bundles in Horizon and run:
 
-```powershell
-./tools/Build.ps1 -HorizonSource "C:/path/to/horizon" -MixinsCli "C:/path/to/horizon-mixins.exe"
+```sh
+horizon-launcher native-build --trust-native-code
 ```
 
-This stages a separate checkout and builds with default features, including audio. Keep game test runs separate from real worlds and player data.
+The launcher uses the pinned Horizon revision and builds the enabled native mods together. Keep test games separate from real worlds and player data.
 
 ## More
 

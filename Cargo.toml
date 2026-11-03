@@ -1,8 +1,12 @@
 [package]
 name = "sodium-horizon-experimental"
-version = "0.3.1"
+version = "0.4.0"
 edition = "2021"
 license = "MIT"
 
 [lib]
 path = "mixins/sodium_horizon/runtime.rs"
+
+[[test]]
+name = "ui_tabs"
+path = "mixins/sodium_horizon/exact_model.rs"

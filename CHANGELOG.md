@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.0
+
+- Show only the selected tab’s settings.
+- Keep search, scrolling and keyboard focus page-local.
+- Remove heading-to-category gaps in both sidebars.
+- Publish the complete native source alongside the release.
+
 ## 0.3.1
 
 - Confine wheel scrolling to the options viewport.
